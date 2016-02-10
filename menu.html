@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>菜单</title>
+<style type="text/css">
+
+body {
+    background:#6C7989 url(images/checker.png);
+}
+
+a {
+    color: #069
+}
+
+.menu {
+    color: #F60;
+    width: 0px;
+    float: left;
+    transition: all 0.5s;
+    overflow: hidden;   /*设置文本超出样式，默认是visible,hidden表示超出部分隐藏*/
+}
+
+.menu ul {
+    padding: 10px 0px 10px 10px;
+    white-space: nowrap;    /*设置不换行*/
+}
+
+.menu li {
+    line-height: 40px;
+}
+
+.menu li:hover {
+    background:gray;
+    color: #FFF;
+}
+
+.selected {
+    width: 300px;
+}
+
+.article {
+    overflow: hidden;
+    width: 640px;
+    padding: 15px 20px;
+    border-radius: 8px 8px 8px 8px;
+    background: #FFF;
+    /*color: #FFF; */
+}
+
+</style>
+</head>
+
+<body>
+<div class="menu">
+    <ul id='menu_ul'>
+        <li>所有文章</li>
+        <li>相册</li>
+        <li>标签</li>
+        <li>关于</li>
+    </ul>
+</div>
+
+<div class="article">
+    <button id='article_button'>菜单</button>
+    <h1>这是标题</h1>
+    <p>中新网2月9日电 据台湾“中央社”报道，台湾南部地震导致台南市维冠金龙大楼倒塌造成重大死伤，台南检方表示，已拘提建筑商林明辉及2名建设公司人员，并以林明辉3人有串供之虞，9日以业务过失致死罪嫌，向法官声押。</p>
+    <p>台南市“维冠金龙”大楼，在台湾南部6日地震中倒塌，至今造成39人死亡、数百人受伤、上百人失联仍待救援，灾情惨重。</p>
+    <p><a href="">查看原文</a></p>
+    <div></div>
+</div>
+
+<script type="text/javascript">
+var menu = document.querySelector('.menu');
+console.info("结果为:%o",menu);
+
+var button = document.querySelector('button');
+var toggleMenu = function(){
+    menu.classList.toggle('selected');
+};
+console.info("aa:%o",button);
+button.addEventListener('click',toggleMenu);
+
+document.querySelector('#article_button').addEventListener('click',toggleMenu);
+
+//
+var ul = document.querySelector('#menu_ul');
+ul.addEventListener('click',function(event){
+    console.info(this,event.target.innerHTML);
+});
+</script>
+</body>
+</html>

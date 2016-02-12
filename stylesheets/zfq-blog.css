@@ -1,0 +1,42 @@
+body {
+    background:#6C7989 url(images/checker.png);
+}
+
+a {
+    color: #069
+}
+
+.menu {
+    color: #F60;
+    width: 0px;
+    float: left;
+    transition: all 0.5s;
+    overflow: hidden;   /*设置文本超出样式，默认是visible,hidden表示超出部分隐藏*/
+}
+
+.menu ul {
+    padding: 10px 0px 10px 10px;
+    white-space: nowrap;    /*设置不换行*/
+}
+
+.menu li {
+    line-height: 40px;
+}
+
+.menu li:hover {
+    background:gray;
+    color: #FFF;
+}
+
+.selected {
+    width: 300px;
+}
+
+.article {
+    overflow: hidden;
+    width: 640px;
+    padding: 15px 20px;
+    border-radius: 8px 8px 8px 8px;
+    background: #FFF;
+    /*color: #FFF; */
+}

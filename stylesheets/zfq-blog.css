@@ -8,7 +8,7 @@ a {
 
 .menu {
     color: #F60;
-    width: 0px;
+    width: 300px;
     float: left;
     transition: all 0.5s;
     overflow: hidden;   /*设置文本超出样式，默认是visible,hidden表示超出部分隐藏*/
@@ -29,7 +29,7 @@ a {
 }
 
 .selected {
-    width: 300px;
+    width: 0px;
 }
 
 .article {

@@ -35,9 +35,15 @@ a {
 .article {
     overflow: hidden;
     width: 640px;
-    padding: 15px 20px;
+    padding: 20px 20px;
     border-radius: 8px 8px 8px 8px;
     background: #FFF;
     box-shadow: 0 5px 10px rgba(0,0,0,0.3);
     /*color: #FFF; */
+}
+
+.zfq_pre {
+    max-height: 500px;
+    overflow: auto;
+    margin: 0;
 }

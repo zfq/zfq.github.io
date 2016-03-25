@@ -32,9 +32,26 @@ a:hover {
     line-height: 40px;
 }
 
+@-webkit-keyframes mycolor {
+            0% {
+                 background-color: red;
+             }
+             40% {
+                 background-color: darkblue;
+             }
+             70% {
+                 background-color: yellow;
+             }
+             100% {
+                 background-color: red;
+             }
+         }
 .menu li:hover {
     background:gray;
     color: #FFF;
+    animation-name: mycolor;
+    animation-duration: 1;
+    animation-timing-function: ease-out;
 }
 
 .selected {

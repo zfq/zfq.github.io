@@ -18,21 +18,42 @@
 
 <div class="article">
     <button id='article_button'>菜单</button>
-    <h1>这是标题</h1>
-    <p>中新网2月9日电 据台湾“中央社”报道，台湾南部地震导致台南市维冠金龙大楼倒塌造成重大死伤，台南检方表示，已拘提建筑商林明辉及2名建设公司人员，并以林明辉3人有串供之虞，9日以业务过失致死罪嫌，向法官声押。</p>
+    <h1>AutoLayout笔记（一）</h1>
+    <p>我们会经常有这样的需求，就是在ViewController的view上添加subView。一般会让子视图距离导航栏有一定的距离，这样竖屏情况下没有什么问题，9日以业务过失致死罪嫌，向法官声押。</p>
     <p>台南市“维冠金龙”大楼，在台湾南部6日地震中倒塌，至今造成39人死亡、数百人受伤、上百人失联仍待救援，灾情惨重。</p>
     <p><a href="">查看原文</a></p>
     <div>
         <pre class="zfq_pre"><code class="C">
 <script type="text/html" id="zfqCode">
-#include <stdlib.h>
-#include <stdio.h> 
-int a = 0;
-int test(void)
+- (void)viewDidLoad
 {
-    printf("aaa");printf("aaa");printf("aaa");printf("aaa");printf("aaa");printf("aaa");printf("aaa");printf("aaa");
-} 
+    [super viewDidLoad];
 
+    UIView *sv = self.view;
+    
+    //1.添加namelabel
+    UILabel *nameLabel = [[UILabel alloc] init];
+    nameLabel.text = @"张三";
+    nameLabel.backgroundColor = [UIColor redColor];
+    [sv addSubview:nameLabel];
+    
+    //1.1.为nameLabel添加约束
+    CGFloat marginTop = 15;
+    CGFloat marginLeft = 15;
+    NSDictionary *views = @{
+                            @"label":nameLabel,
+                            @"topLayoutGuide":self.topLayoutGuide
+                            };
+    NSDictionary *metrics = @{
+                              @"marginTop":@(marginTop),
+                              @"marginLeft":@(marginLeft)
+                              };
+    NSArray *hCons = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-marginLeft-[label]" options:0 metrics:metrics views:views];
+    NSArray *vCons = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[topLayoutGuide]-marginTop-[label]" options:0 metrics:metrics views:views];
+    nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [sv addConstraints:hCons];
+    [sv addConstraints:vCons];
+}
 </script>    
         </code></pre>
     </div>
